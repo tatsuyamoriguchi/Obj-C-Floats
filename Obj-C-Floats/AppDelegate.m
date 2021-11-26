@@ -32,6 +32,20 @@
     float oneThirdWrong2 = 1.0/3.0;
     NSLog(@"One third wrong2: %f", oneThirdWrong2); // One third wrong2: 0.333333
     
+    
+    float initial = 0.1;
+    f = initial / 3;
+    f += initial / 3;
+    f += initial / 3;
+    // now f is supposed to be equal to the initial value, but if statement below returns false.
+    if (f == initial) {
+        NSLog(@"Match!");
+        
+    } else {
+        NSLog(@"No match: [");
+    }
+    
+    
     return YES;
 }
 
