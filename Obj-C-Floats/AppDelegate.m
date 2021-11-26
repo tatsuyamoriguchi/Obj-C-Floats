@@ -20,9 +20,9 @@
     double d = M_PI;
     CGFloat cgf = M_PI;
     
-    NSLog(@"Float: %f (%lu bytes)", f, sizeof(f)); // On 32/64 bit platform, Float: 3.141593 (4 bytes)
-    NSLog(@"Double: %f (%lu bytes)", d, sizeof(d)); // On 32/64 bit platform, Double: 3.141593 (8 bytes)
-    NSLog(@"CGFloat: %f (%lu bytes)", cgf, sizeof(cgf)); // On 32 bit platform, CGFloat: 3.141593 (4 bytes), On 64 bit platform, 8 bytes
+    NSLog(@"Float: %0.2f (%lu bytes)", f, sizeof(f)); // On 32/64 bit platform, Float: 3.141593 (4 bytes)
+    NSLog(@"Double: %0.2f (%lu bytes)", d, sizeof(d)); // On 32/64 bit platform, Double: 3.141593 (8 bytes)
+    NSLog(@"CGFloat: %0.2f (%lu bytes)", cgf, sizeof(cgf)); // On 32 bit platform, CGFloat: 3.141593 (4 bytes), On 64 bit platform, 8 bytes
     
     
     
