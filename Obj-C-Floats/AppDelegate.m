@@ -38,6 +38,11 @@
     f += initial / 3;
     f += initial / 3;
     // now f is supposed to be equal to the initial value, but if statement below returns false.
+    
+    NSLog(@"f: %.12f", f);
+    NSLog(@"initial: %.12f", initial);
+    NSLog(@"Error: %.12f", ABS(f - initial)); // Error: 0.000000007451
+    
     if (f == initial) {
         NSLog(@"Match!");
         
