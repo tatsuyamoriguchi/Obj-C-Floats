@@ -34,17 +34,26 @@
     
     
     float initial = 0.1;
-    f = initial / 3;
-    f += initial / 3;
-    f += initial / 3;
-    // now f is supposed to be equal to the initial value, but if statement below returns false.
     
-    NSLog(@"f: %.12f", f);
-    NSLog(@"initial: %.12f", initial);
-    NSLog(@"Error: %.12f", ABS(f - initial)); // Error: 0.000000007451
+    int iterations = 1327;
+    float step =  initial / iterations;
+    f = 0;
+    for (int i = 0; i < iterations; ++i) {
+        f += step;
+    }
+    
+//    f = initial / 3;
+//    f += initial / 3;
+//    f += initial / 3;
     
     float tolerance = FLT_EPSILON; // Now the descrepacy error is within the tolerance range, the following if statement returns true.
+
+    NSLog(@"f: %.12f", f);
+    NSLog(@"initial: %.12f", initial);
+    NSLog(@"Error: %.12f", ABS(f - initial)); // Error: 0.000001177192
+    NSLog(@"Tolerance: %.12f", tolerance); // Tolerance: 0.000000119209
     
+   // Since Error value is larger than Tolerance, it returns "No match: ["
     
     if (ABS(f - initial) < tolerance) {
         NSLog(@"Match!");
