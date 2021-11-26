@@ -33,7 +33,7 @@
     NSLog(@"One third wrong2: %f", oneThirdWrong2); // One third wrong2: 0.333333
     
     
-    float initial = 0.1;
+    float initial = 1000000; // Increase the initial value from 0.1 to 1000000
     
     int iterations = 1327;
     float step =  initial / iterations;
@@ -53,7 +53,7 @@
     NSLog(@"Error: %.12f", ABS(f - initial)); // Error: 0.000001177192
     NSLog(@"Tolerance: %.12f", tolerance); // Tolerance: 0.000000119209
     
-   // Since Error value is less than Tolerance, it returns "Match!"
+   // Since Error value is larger than Tolerance, it returns "No Match"
     
     if (ABS(f - initial) < tolerance) {
         NSLog(@"Match!");
