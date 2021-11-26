@@ -43,7 +43,10 @@
     NSLog(@"initial: %.12f", initial);
     NSLog(@"Error: %.12f", ABS(f - initial)); // Error: 0.000000007451
     
-    if (f == initial) {
+    float tolerance = FLT_EPSILON; // Now the descrepacy error is within the tolerance range, the following if statement returns true.
+    
+    
+    if (ABS(f - initial) < tolerance) {
         NSLog(@"Match!");
         
     } else {
