@@ -25,6 +25,12 @@
     NSLog(@"CGFloat: %0.12f (%lu bytes)", cgf, sizeof(cgf)); // On 64 bit platform, CGFloat: 3.141592653590 (8 bytes)
     // Double is more accurate than Float
     NSLog(@"Descrepancy Error: %0.12f", ABS((double)f - d));
+   
+    float oneThirdWrong = 1/3;
+    NSLog(@"One third wrong: %f", oneThirdWrong); // One third wrong: 0.000000 <---
+    
+    float oneThirdWrong2 = 1.0/3.0;
+    NSLog(@"One third wrong2: %f", oneThirdWrong2); // One third wrong2: 0.333333
     
     return YES;
 }
