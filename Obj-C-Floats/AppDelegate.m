@@ -46,14 +46,16 @@
 //    f += initial / 3;
 //    f += initial / 3;
     
-    float tolerance = iterations * FLT_EPSILON; // Increase tolerance value multiplied by iterations
+    float tolerance = iterations * FLT_EPSILON * ABS(f+initial); // Increase tolerance value multiplied by iterations and (f + initial)
 
     NSLog(@"f: %.12f", f);
     NSLog(@"initial: %.12f", initial);
     NSLog(@"Error: %.12f", ABS(f - initial)); // Error: 0.000001177192
     NSLog(@"Tolerance: %.12f", tolerance); // Tolerance: 0.000000119209
     
-   // Since Error value is larger than Tolerance, it returns "No Match"
+   // Since Error value is less than Tolerance, it returns "Match"
+    // Depending on the size of numbers that you're working with, Floats accumulate errors.
+    
     
     if (ABS(f - initial) < tolerance) {
         NSLog(@"Match!");
